@@ -77,4 +77,24 @@ products = [
         'numReviews': 12,
         'shop': 'champion',
     },
+
+
+
+
+    {
+    "orderItems": [{"_id": 3, "name": "figurine", "price": "10000.00", "quantity": 2, "image": "/images/fig.jpg"}
+,
+{"_id": 4, "name": "airpods", "price": "9000.00", "quantity": 8, "image": "/images/airpod.jpg"}],
+    "paymentMethod": "moov",
+    "taxPrice": 120,
+    "shippingPrice" : 150,
+    "totalPrice": 15000,
+    "shippingAddress": {
+        "address": "Agoe-anome",
+        "city": "Lome",
+        "postalCode": "bp 42",
+        "country": "togo"
+    }
+
+}
 ]

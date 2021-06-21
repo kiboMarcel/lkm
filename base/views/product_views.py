@@ -6,10 +6,16 @@ from base.serializers import ProductSerializer
 from rest_framework import status
 
 
-
 @api_view(['GET'])
 def getProducts(request):
     products = Product.objects.all()
+    serializer = ProductSerializer(products, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def getProductCategory(request):
+    data = request.data
+    products = Product.objects.filter(category=data['cat'])
     serializer = ProductSerializer(products, many=True)
     return Response(serializer.data)
 
