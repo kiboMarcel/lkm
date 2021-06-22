@@ -13,9 +13,10 @@ def getProducts(request):
     return Response(serializer.data)
 
 @api_view(['GET'])
-def getProductCategory(request):
-    data = request.data
-    products = Product.objects.filter(category=data['cat'])
+def getProductCategory(request, category):
+    #data = request.data
+    #products = Product.objects.filter(category=data['category'])
+    products = Product.objects.filter(category=category)
     serializer = ProductSerializer(products, many=True)
     return Response(serializer.data)
 

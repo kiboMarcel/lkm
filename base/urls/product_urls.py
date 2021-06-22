@@ -6,5 +6,5 @@ urlpatterns = [
     
     path('', views.getProducts, name="products"),
     path('<str:pk>', views.getProduct, name="product"),
-    path('productCategory/', views.getProductCategory, name="productCat"),
+    path('productCategory/<str:category>', views.getProductCategory, name="productCat"),
 ]

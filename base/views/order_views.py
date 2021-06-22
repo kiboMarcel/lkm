@@ -71,7 +71,7 @@ def addOrderItems(request):
             return Response(product) """
     
 
-@api_view(['POST'])
+@api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def getOrderById(request, pk):
 
@@ -83,8 +83,8 @@ def getOrderById(request, pk):
             serializer = OrderSerializer(order , many= False)
             return Response(serializer.data)
         else:
-            Response({'detail': 'Not Authorized to view this order'},
+            Response({'detail': 'Vous n\'etes pas authairizer a voir cette commande'},
             status=status.HTTP_400_BAD_REQUEST)
     except:
-        return Response({'detail': 'Order does not exixt'},
+        return Response({'detail': 'La commande n\'existe pas '},
         status=status.HTTP_400_BAD_REQUEST)
